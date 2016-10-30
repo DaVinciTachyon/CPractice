@@ -26,4 +26,3 @@ int fact(int i) {
   else printf("Your input for the factorial function is invalid.\n");
   return a;
 }
-

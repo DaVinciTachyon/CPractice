@@ -8,9 +8,10 @@ int main() {
   totNum = 49;
 
   printf("Your Lotto Numbers are: ");
+  srand(time(0));
+  rand(); rand();
   for(i = 0; i < 6; i++){
-    srand(time(NULL));
-    num[i]=abs(rand()%totNum+1);
+    num[i]=rand()%totNum+1;
     printf("%d, ",num[i]);
   }
   printf("\n");
