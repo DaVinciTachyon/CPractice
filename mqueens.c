@@ -47,7 +47,8 @@ int main()
             if(counter>=N) succ++;
         }
     }
-    printf("There are %d possible ways\n",succ);
+    if(succ==1) printf("There is %d possible way\n",succ);
+    else printf("There are %d possible ways\n",succ);
 
     return 0;
 }
