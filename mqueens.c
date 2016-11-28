@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define N 3
+#define N 2/*Doesn't work yet*/
 int main()
 {
     /*int n;
@@ -8,11 +8,9 @@ int main()
 
     int a,b,i,j,x,y,m,
         counter,
-        succ=0;
-    int board[N][N];
-    
-    if(N==1) succ=1;
-    else for(a=0;a<N;a++)
+        succ=0,
+		board[N][N];
+    for(a=0;a<N;a++)
     {
         for(b=0;b<N;b++)
         {
@@ -23,16 +21,28 @@ int main()
                     board[x][y] = 1;
                 }
             }
-            board[a][b] = 0;
             counter = 0;
+            board[a][b] = 0;
+            for(m=0;m<N;m++)
+            {
+                board[m][b]=0;
+                board[a][m]=0;
+                board[a-m][b+m]=0;
+                board[a+m][b-m]=0;
+                board[a+m][b+m]=0;
+                board[a-m][b+m]=0;
+            }
+            counter++;
             for(i=0;i<N;i++)
             {
                 for(j=0;j<N;j++)
                 {
                     if(board[i][j] == 1)
                     {
+                        counter++;
                         for(m=0;m<N;m++)
                         {
+                            board[i][j]=0;
                             board[m][j]=0;
                             board[i][m]=0;
                             board[i-m][j+m]=0;
@@ -40,7 +50,6 @@ int main()
                             board[i+m][j+m]=0;
                             board[i-m][j+m]=0;
                         }
-                        counter++;
                     }
                 }
             }
@@ -52,3 +61,4 @@ int main()
 
     return 0;
 }
+/*No Comment*/
