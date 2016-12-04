@@ -16,7 +16,7 @@ float sunlightHoursCalculation();
 int main()
 {
 	//Assumption 1: The period of a year is 366 days
-		//Consequence 1: Calculations will be wrong because the period id approximately 365 days, 5 hours, 48 minutes, 45 seconds
+		//Consequence 1: Calculations will be wrong because the period is approximately 365 days, 5 hours, 48 minutes, 45 seconds
 	//Assumption 2: Day 0 is the 1st of January 2016
 	//Assumption 3: The functions below will be executed per city i.e. Dublin, Nuuk, Honolulu
 	//Assumption 4: The user will give the time they see on their watch
