@@ -42,10 +42,10 @@ int queen(int n, int board[n][n], int counter, int succ)
                 {
                     board[m][b] = 0;
                     board[a][m] = 0;
-                    board[a-m][b+m] = 0;
-                    board[a+m][b-m] = 0;
-                    board[a+m][b+m] = 0;
-                    board[a-m][b+m] = 0;
+                    if(a-m>=0&&b+m<=n) board[a-m][b+m] = 0;
+                    if(a+m<=n&&b-m>=0) board[a+m][b-m] = 0;
+                    if(a+m<=n&&b+m<=n) board[a+m][b+m] = 0;
+                    if(a-m>=0&&b-m>=0) board[a-m][b-m] = 0;
                 }
                 counter++;
                 succ += n>0?queen(n-1, board[N][N], counter, succ):0;
