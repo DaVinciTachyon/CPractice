@@ -1,16 +1,6 @@
 #include <stdio.h>
 /*The objective of the program is to calculate the number of possible arrangements of n queens on a nxn chessboard,
 so that the do not intersect each other on the horizontal axis, diagonal axes and vertical axis*/
-/*Additional Requirements
-1: Display the number of calculations required for the answer
-  a: Full calculations
-  b: the calculation until a certain point
-2: Display the amount of time take for the calculations
-  a: Full calculations
-  b: the calculation until a certain point
-3: Program set up for batch processing
-4: Set up a forcasting for number of calculations and timing for batch work
-5: Parallelize the program*/
 
 int calc //Performs the calculations, branching out for each possibility
 (
@@ -28,15 +18,15 @@ int calc //Performs the calculations, branching out for each possibility
 
   for(verticalPos = 0; verticalPos < numSquares; verticalPos++)
   {
-    intersectFlag = 0;
+    intersectFlag = 1;
     for(verticalVar = 1, posCheck = horizontalPos - 1; posCheck >= 0; posCheck--, verticalVar++)
     {
      if(board[posCheck] == verticalPos ||
         board[posCheck] == verticalPos - verticalVar ||
         board[posCheck] == verticalPos + verticalVar)
-      intersectFlag = 1;
+      intersectFlag = 0;
     }
-    if(intersectFlag == 0)
+    if(intersectFlag)
     {
       board[horizontalPos] = verticalPos;
       if(n == 0)

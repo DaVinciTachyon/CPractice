@@ -28,16 +28,16 @@ int calc //Performs the calculations, branching out for each possibility
 
   for(verticalPos = 0; verticalPos < numSquares; verticalPos++)
   {
-    intersectFlag = 0;
+    intersectFlag = 1;
     for(verticalVar = 1, posCheck = horizontalPos - 1; posCheck >= 0; posCheck--, verticalVar++)
     {
      if(board[posCheck] == verticalPos ||
         board[posCheck] == verticalPos - verticalVar ||
         board[posCheck] == verticalPos + verticalVar)
-      intersectFlag = 1;
+      intersectFlag = 0;
       success[1]++;
     }
-    if(intersectFlag == 0)
+    if(intersectFlag)
     {
       board[horizontalPos] = verticalPos;
       if(n == 0)
