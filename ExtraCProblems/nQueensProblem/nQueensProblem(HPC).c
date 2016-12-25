@@ -18,7 +18,7 @@ int calc //Performs the calculations, branching out for each possibility
   int numSquares,       //The length of the side of the board (not used for number of queens)
   int board[],          //The board horizontal positions
   int horizontalPos,    //tracking the horizontal position in the board
-  int success           //The number of successful arrangements
+  int success[]         //The number of successful arrangements
 )
 {
   int verticalPos,      //Track the vertical position in the board
@@ -35,17 +35,29 @@ int calc //Performs the calculations, branching out for each possibility
         board[posCheck] == verticalPos - verticalVar ||
         board[posCheck] == verticalPos + verticalVar)
       intersectFlag = 1;
+      success[1]++;
     }
     if(intersectFlag == 0)
     {
       board[horizontalPos] = verticalPos;
       if(n == 0)
-        success++;
+        success[0]++;
       else
-        success = n>0?calc(n - 1, numSquares, board, horizontalPos + 1, success):0;
+        success[0] = n>0?calc
+          (
+            n - 1,
+            numSquares,
+            board,
+            horizontalPos + 1,
+            success
+          ):0;
     }//end of if successful
   }//end of for loop
-  return success;
+  return[]
+  {
+    success[0],
+    success[1]
+  }
 }
 
 int numSquaresFunc()
@@ -60,14 +72,15 @@ int main()
 {
   int numSquares,
       horizontalPos,
-      success;
+      success[2];
 
   numSquares = numSquaresFunc();
 
   int board[numSquares];
 
   horizontalPos = 0;
-  success = 0;
+  success[0] = 0;
+  success[1] = 0;
 
   success = calc
     (
@@ -78,7 +91,8 @@ int main()
       success
     );
 
-  printf("The number of arrangements of queens is %d\n", success);
+  printf("The number of arrangements of queens is %d\n", success[0]);
+  printf("The number of for loops executed was %d\n", success[1]);
 
   return 0;
 }
