@@ -14,11 +14,11 @@ so that the do not intersect each other on the horizontal axis, diagonal axes an
 
 int calc //Performs the calculations, branching out for each possibility
 (
-  int n,                //counter for number of iterations
-  int numSquares,       //The length of the side of the board (not used for number of queens)
-  int board[],          //The board horizontal positions
-  int horizontalPos,    //tracking the horizontal position in the board
-  int success[]         //The number of successful arrangements
+  int n,                      //counter for number of iterations
+  int numSquares,             //The length of the side of the board (not used for number of queens)
+  int board[],                //The board horizontal positions
+  int horizontalPos,          //tracking the horizontal position in the board
+  long unsigned int success[] //The number of successful arrangements
 )
 {
   int verticalPos,      //Track the vertical position in the board
@@ -71,8 +71,8 @@ int numSquaresFunc()
 int main()
 {
   int numSquares,
-      horizontalPos,
-      success[2];
+      horizontalPos;
+  long unsigned int success[2];
 
   numSquares = numSquaresFunc();
 
