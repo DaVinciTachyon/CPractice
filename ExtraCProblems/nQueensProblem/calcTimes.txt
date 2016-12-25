@@ -1,0 +1,15 @@
+n = 1: 0 secs
+n = 2: 0 secs
+n = 3: 0 secs
+n = 4: 0 secs
+n = 5: 0 secs
+n = 6: 0 secs
+n = 7: 0 secs
+n = 8: 0.002 secs
+n = 9: 0.01 secs
+n = 10: 0.045 secs
+n = 11: 0.254 secs
+n = 12: 1.507 secs
+n = 13: 11.049 secs
+n = 14: 66.736 secs
+n = 15: 481.479 secs
