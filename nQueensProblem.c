@@ -69,7 +69,14 @@ int main()
   horizontalPos = 0;
   success = 0;
 
-  success = calc(numSquares - 1, numSquares, board, horizontalPos, success);
+  success = calc
+    (
+      numSquares - 1,
+      numSquares,
+      board,
+      horizontalPos,
+      success
+    );
 
   printf("The number of arrangements of queens is %d\n", success);
 

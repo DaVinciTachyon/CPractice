@@ -43,10 +43,17 @@ int calc //Performs the calculations, branching out for each possibility
       if(n == 0)
         success[0]++;
       else
-        success[0] = n>0?calc(n - 1, numSquares, board, horizontalPos + 1, success):0;
+        success[0] = n>0?calc
+          (
+            n - 1,
+            numSquares,
+            board,
+            horizontalPos + 1,
+            success
+          ):0;
     }//end of if successful
   }//end of for loop
-  return success[2];
+  return success[];
 }
 
 int numSquaresFunc()
@@ -71,7 +78,14 @@ int main()
   success[0] = 0;
   success[1] = 0;
 
-  success[2] = calc(numSquares - 1, numSquares, board, horizontalPos, success);
+  success[] = calc
+    (
+      numSquares - 1,
+      numSquares,
+      board,
+      horizontalPos,
+      success
+    );
 
   printf("The number of arrangements of queens is %d\n", success[0]);
   printf("The number of for loops executed was %d\n", success[1]);
