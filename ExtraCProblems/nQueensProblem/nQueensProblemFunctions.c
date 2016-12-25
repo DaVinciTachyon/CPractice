@@ -1,7 +1,16 @@
 #include <stdio.h>
-#include <time.h>
 /*The objective of the program is to calculate the number of possible arrangements of n queens on a nxn chessboard,
 so that the do not intersect each other on the horizontal axis, diagonal axes and vertical axis*/
+/*Additional Requirements
+1: Display the number of calculations required for the answer
+  a: Full calculations
+  b: the calculation until a certain point
+2: Display the amount of time take for the calculations
+  a: Full calculations (done)
+  b: the calculation until a certain point
+3: Program set up for batch processing
+4: Set up a forcasting for number of calculations and timing for batch work
+5: Parallelize the program*/
 
 int calc //Performs the calculations, branching out for each possibility
 (
@@ -9,7 +18,7 @@ int calc //Performs the calculations, branching out for each possibility
   int numSquares,             //The length of the side of the board (not used for number of queens)
   int board[],                //The board horizontal positions
   int horizontalPos,          //tracking the horizontal position in the board
-  long unsigned int success   //The number of successful arrangements
+  long unsigned int success[] //The number of successful arrangements
 )
 {
   int verticalPos,      //Track the vertical position in the board
@@ -26,14 +35,15 @@ int calc //Performs the calculations, branching out for each possibility
         board[posCheck] == verticalPos - verticalVar ||
         board[posCheck] == verticalPos + verticalVar)
       intersectFlag = 0;
+      success[1]++;
     }
     if(intersectFlag)
     {
       board[horizontalPos] = verticalPos;
       if(n == 0)
-        success++;
+        success[0]++;
       else
-        success = n>0?calc
+        success[0] = n>0?calc
           (
             n - 1,
             numSquares,
@@ -43,7 +53,11 @@ int calc //Performs the calculations, branching out for each possibility
           ):0;
     }//end of if successful
   }//end of for loop
-  return success;
+  return[]
+  {
+    success[0],
+    success[1]
+  }
 }
 
 int numSquaresFunc()
@@ -58,18 +72,15 @@ int main()
 {
   int numSquares,
       horizontalPos;
-  long unsigned int success;
-  clock_t t[2];
-  double timeElapsed;
+  long unsigned int success[2];
 
   numSquares = numSquaresFunc();
 
   int board[numSquares];
 
   horizontalPos = 0;
-  success = 0;
-
-  t[0] = clock();
+  success[0] = 0;
+  success[1] = 0;
 
   success = calc
     (
@@ -80,10 +91,8 @@ int main()
       success
     );
 
-  t[1] = clock();
-
-  printf("The number of arrangements of queens is %d\n", success);
-  printf("The time taken for the calculations is %lf seconds\n", timeElapsed = double(t[1] - t[0]) / CLOCKS_PER_SEC);
+  printf("The number of arrangements of queens is %d\n", success[0]);
+  printf("The number of for loops executed was %d\n", success[1]);
 
   return 0;
 }
