@@ -29,41 +29,8 @@ int main()
 
 int lcm(int n1, int n2, int n3)
 {
-    int i,
-        k,
-        a,
-        b,
-        l,
-        c,
-        f;
+  int a;
+  a = 60;
 
-    i = 1;
-    f = 1;
-
-    while (f)
-    {
-      a = n1 * i;
-      k = 1;
-      while(b <= a)
-      {
-        b = n2 * k;
-        if(a == b)
-        {
-          l = 1;
-          while(c <= b)
-          {
-            c = n3 * l;
-            if(b == c)
-            {
-              f = 0;
-            }
-            l++;
-          }
-        }
-        k++;
-      }
-      i++;
-    }
-
-    return a;
+  return a;
 }

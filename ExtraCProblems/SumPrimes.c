@@ -1,40 +1,47 @@
 #include <stdio.h>
+#include <math.h>
 
 int main()
 {
-  int n,
-      i,
-      j,
-      k,
-      p,
-      f,
+  int n, //Number of Primes
+      p, //Prime indicator
+      m, //Counter for n
+      i, //Counter
+      j, //Counter
       sum;
 
+  sum = 0;
+  m = 0;
+  j = 0;
   printf("How many primes would you like to add up? ");
   scanf("%d", &n);
 
-  for(i = 0, p = 0, sum = 0; i < n; i++)
+  if (n > 0)
   {
-    j = p + 1;
-    do
+    while(m<n) //Repeats for requeted amount of prime numbers
     {
-      f = 0;
-      if(j > 1 && j % j == 0 && j % 1 == 0)
+      p = 1;
+      while (p) //Finds the next prime
       {
-        for(k = 2; k < j; k++)
+        if(j % 1 == 0 && j % j == 0 && j > 1) //Is it a potential prime, satisfies positive cases
         {
-          if(j % k == 0)
-            f = 1;
+          p = 0;
+          for (i = 2; i <= sqrt(j); i++) //Searches for factors between 2 and j - 1, gets rid of negative cases
+          {
+            if (j % i == 0) //If a potential factor is divisible by j, it is not a prime number, Checks the negative case
+            {
+              p = 1;
+            }
+          }
         }
-      }
-      if(f == 0)
-        p = j;
-      else
+        if(p == 0) sum += j;
         j++;
-    }while(f == 1);
-    sum += p;
+      }
+      m++;
+    }
   }
 
   printf("The sum of the first %d primes is %d.\n", n, sum);
+
   return 0;
 }
