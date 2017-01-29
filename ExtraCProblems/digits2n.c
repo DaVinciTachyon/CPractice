@@ -8,16 +8,16 @@
 int main()
 {
   int findBool,
-      power,
-      digitsTally,
-      searchPosCounter,
       finalDigits,
+      power,
       powerTally,
-      digitBool[SEARCHRANGE];
+      digitsTally,
+      digitBool[SEARCHRANGE],
+      searchPosCounter;
 
+  findBool = 1;
   power = 0;
   powerTally = 1;
-  findBool = 1;
 
   while(findBool)
   {
