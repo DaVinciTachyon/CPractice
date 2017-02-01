@@ -12,10 +12,10 @@ Find the difference between the sum of the squares of the first one hundred natu
 
 int main()
 {
-  int sumS,
-      sqSum,
-      diff,
-      i;
+  unsigned long long  sumS,
+                      sqSum,
+                      diff;
+  int i;
 
   sumS = 0;
   sqSum = 0;
@@ -24,14 +24,16 @@ int main()
   {
     sumS += i;
   }
-  sumS = pow(sumS, 2);
+  sumS = (int)(pow(sumS, 2) + 0.5);
+  printf("%d\n", sumS);
 
   for (i = 1; i <= 100; i++)
   {
     sqSum += pow(i, 2);
   }
+  printf("%d\n", sqSum);
 
-  diff = sqSum - sumS;
+  diff = sumS - sqSum;
 
   printf("%d\n", diff);
 
