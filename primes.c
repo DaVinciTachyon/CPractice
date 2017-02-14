@@ -1,43 +1,52 @@
 #include <stdio.h>
 #include <math.h>
+#include "Library\checkPrime.c"
+
+int askNumPrimes();
+void displayPrimes(int);
 
 int main()
 {
-  int n, //Number of Primes
-      p, //Prime indicator
-      m, //Counter for n
-      i, //Counter
-      j; //Counter
+  int n; //Number of Primes
 
-  m = 0;
-  j = 0; //Using 2 as a starting point for prime numbers, A prime number has exactly two factors, and is a Natural number > 1
+  n = askNumPrimes();
+
+  displayPrimes(n);
+
+  return 0;
+}
+
+int askNumPrimes()
+{
+  int n;
+
   printf("How many primes do you want to see? ");
   scanf("%d",&n);
 
+  return n;
+}
+
+void displayPrimes(int n)
+{
+  int m,
+      p,
+      j;
+
+  m = 0;
+  j = 0;
+
   if (n <= 0) printf("That cannot be done.");
-  else while(m<n) //Repeats for requeted amount of prime numbers
+  else while(m<n) //Repeats for requested amount of prime numbers
   {
-    p = 0;
-    while (p == 0) //Finds the next prime
+    //Finds the next prime
+    do
     {
-      if(j % 1 == 0 && j % j == 0 && j > 1) //Is it a potential prime, satisfies positive cases
-        {
-          p = 1;
-          for (i = 2; i <= sqrt(j); i++) //Searches for factors between 2 and j - 1, gets rid of negative cases
-          {
-            if (j % i == 0) //If a potential factor is divisible by j, it is not a prime number, Checks the negative case
-            {
-              p = 0;
-            }
-          }
-        }
-      if(p == 1) printf("%d, ", j); //Prints the prime
+      p = checkPrime(j);
+      if(p)
+        printf("%d, ", j); //Prints the prime
       j++;
-    }
+    } while (!p);
     m++;
   }
-
   printf("\n");
-
-  return 0;
 }

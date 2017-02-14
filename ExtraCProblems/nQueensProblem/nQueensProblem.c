@@ -18,7 +18,7 @@ int calc //Performs the calculations, branching out for each possibility
   int numSquares,             //The length of the side of the board (not used for number of queens)
   int board[],                //The board horizontal positions
   int horizontalPos,          //tracking the horizontal position in the board
-  long unsigned int success   //The number of successful arrangements
+  unsigned long success   //The number of successful arrangements
 )
 {
   int verticalPos,      //Track the vertical position in the board
@@ -31,8 +31,8 @@ int calc //Performs the calculations, branching out for each possibility
     intersectFlag = 1;
     for(verticalVar = 1, posCheck = horizontalPos - 1; posCheck >= 0; posCheck--, verticalVar++)
     {
-     if(board[posCheck] == verticalPos ||
-        board[posCheck] == verticalPos - verticalVar ||
+     if(board[posCheck] == verticalPos                ||
+        board[posCheck] == verticalPos - verticalVar  ||
         board[posCheck] == verticalPos + verticalVar)
       intersectFlag = 0;
     }
@@ -67,7 +67,7 @@ int main()
 {
   int numSquares,
       horizontalPos;
-  long unsigned int success;
+  unsigned long success;
 
   numSquares = numSquaresFunc();
 

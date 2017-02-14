@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include "C:\Users\Admin\Documents\Github\CPractice\checkPrime.c"
 
 int main()
 {
@@ -18,25 +19,16 @@ int main()
 
   if (n > 0)
   {
-    while(m<n) //Repeats for requeted amount of prime numbers
+    while(m < n) //Repeats for requeted amount of prime numbers
     {
-      p = 1;
-      while (p) //Finds the next prime
+      //Finds the next prime
+      do
       {
-        if(j % 1 == 0 && j % j == 0 && j > 1) //Is it a potential prime, satisfies positive cases
-        {
-          p = 0;
-          for (i = 2; i <= sqrt(j); i++) //Searches for factors between 2 and j - 1, gets rid of negative cases
-          {
-            if (j % i == 0) //If a potential factor is divisible by j, it is not a prime number, Checks the negative case
-            {
-              p = 1;
-            }
-          }
-        }
-        if(p == 0) sum += j;
+        p = checkPrime(j);
+        if(p)
+          sum += j;
         j++;
-      }
+      } while (!p);
       m++;
     }
   }

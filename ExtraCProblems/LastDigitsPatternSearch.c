@@ -14,12 +14,17 @@ int main()
       powerTally,               //Creates the number to check
       digitsTally,              //Determines the digit being checked
       digitBool[SEARCHRANGE],   //Boolean which determines whether the digit being checked is in the number being checked
-      searchPosCounter;         //Determines the position to check within the number
+      searchPosCounter,         //Determines the position to check within the number
+      o,
+      oo,
+      f;
 
   //Initialisations
   findBool = 1;   //In order to access the while loop there must be no solution
   power = 0;      //Lowest power that is an integer, if 1 is excluded
   powerTally = 1; //Lowest integer value of each power
+  o = 0;
+  oo = 1;
 
   while(findBool)                                                                   //Continues as long as a solution has not been found
   {
@@ -43,6 +48,19 @@ int main()
       if(digitBool[digitsTally])                                                    //If one of the numbers has not been found
         findBool = 1;                                                               //It is the not the solution
     }
+
+    if(findBool == 0)
+    {
+      o++;
+      for(digitsTally = 0, f = 0; digitsTally < oo; digitsTally++)
+      {
+        if(o == digitsTally)
+          f = 1;
+      }
+      if(f == 1)
+        findBool = 1;
+    }
+
 
     finalDigits = powerTally;                                                       //Saves the solution temporarily
     powerTally = (powerTally * BASE) % ((int)(pow(10, SEARCHRANGE)));               //Creates the next number to check

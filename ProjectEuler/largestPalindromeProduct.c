@@ -16,7 +16,7 @@ int main()
 
   for (i = 100, palindrome = 0; i < 1000; i++)
   {
-    for (j = 100; j < 1000; j++)
+    for (j = i; j < 1000; j++)
     {
       printf("i = %d\t j = %d\n", i, j);
       temp = i * j;
