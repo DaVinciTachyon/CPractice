@@ -14,7 +14,9 @@ int main()
   {
     sum += sqrt(i);
   }
+  
+  sum = sqrt(sum);
 
-  printf("The square root of the sum of the square roots of the first %d natural numbers is %lf\n", n, sqrt(sum));
+  printf("The square root of the sum of the square roots of the first %d natural numbers is %lf\n", n, sum);
   return 0;
 }
