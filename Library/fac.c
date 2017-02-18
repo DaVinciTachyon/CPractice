@@ -2,11 +2,15 @@
 
 int fac(int n)
 {
-  int sum = 1;
+  int sum;
+  
+  sum = 1;
+  
   while(n > 0)
   {
     sum *= n;
     n--;
   }
+  
   return sum;
 }
