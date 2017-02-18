@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "checkPrime.c"
 
-int NumPrime(int n)
+int numPrime(int n)
 {
   int p, //Prime indicator
       m, //Counter for n
