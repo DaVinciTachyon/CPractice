@@ -87,7 +87,7 @@ void sortList(char content[N][L], int element, int lengthOfFile)
         char temp[2][L];
         strcpy(temp[0], content[j]);
         strcpy(temp[1], content[j + 1]);
-        sortList(temp, element + 1, 1);
+        sortList(temp, element + 1, 2);
         strcpy(content[j], temp[0]);
         strcpy(content[j + 1], temp[1]);
       }
