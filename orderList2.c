@@ -22,8 +22,6 @@ int main()
   describeProgram();
 
   fileNaming(fileName, outputName);
-    strcpy(fileName, "text.txt");
-    strcpy(outputName, "out.txt");
 
   lengthOfFile = extractContent(fileName, content);
 
