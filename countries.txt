@@ -1,0 +1,83 @@
+af.dz	Algeria
+la.ar	Argentina
+oc.au	Australia
+eu.at	Austria
+me.bh	Bahrain
+as.bd	Bangladesh
+eu.be	Belgium
+la.bo	Bolivia
+la.br	Brazil
+eu.bg	Bulgaria
+af.cm	Cameroon
+na.ca	Canada
+la.cl	Chile
+as.cn	China
+la.co	Colombia
+la.cr	Costa Rica
+eu.hr	Croatia
+eu.cz	Czech Republic
+eu.dk	Denmark
+la.do	Dominican Republic
+la.ec	Ecuador
+af.eg	Egypt
+eu.fi	Finland
+eu.fr	France
+eu.de	Germany
+af.gh	Ghana
+eu.gr	Greece
+la.gt	Guatemala
+as.hk	Hong Kong
+eu.hu	Hungary
+as.in	India
+as.id	Indonesia
+eu.ie	Ireland
+me.il	Israel
+eu.it	Italy
+as.jp	Japan
+me.jo	Jordan
+af.ke	Kenya
+as.kr	Korea
+me.kw	Kuwait
+eu.lt	Lithuania
+as.my	Malaysia
+la.mx	Mexico
+af.ma	Morocco
+as.np	Nepal
+eu.nl	Netherlands
+oc.nz	New Zealand
+af.ng	Nigeria
+eu.no	Norway
+me.pk	Pakistan
+la.pa	Panama
+la.pe	Peru
+as.ph	Philippines
+eu.pl	Poland
+eu.pt	Portugal
+la.pr	Puerto Rico
+me.qa	Qatar
+eu.ro	Romania
+eu.ru	Russian Federation
+me.sa	Saudi Arabia
+eu.rs	Serbia
+as.sg	Singapore
+eu.sk	Slovak Republic
+af.za	South Africa
+eu.es	Spain
+as.lk	Sri Lanka
+eu.se	Sweden
+eu.ch	Switzerland
+as.tw	Taiwan
+af.tz	Tanzania
+as.th	Thailand
+la.tt	Trinidad and Tobago
+af.tn	Tunisia
+eu.tr	Turkey
+af.ug	Uganda
+eu.ua	Ukraine
+me.ae	United Arab Emirates
+eu.gb	United Kingdom
+na.us	United States
+la.uy	Uruguay
+la.ve	Venezuela
+as.vn	Vietnam
+af.zw	Zimbabwe
