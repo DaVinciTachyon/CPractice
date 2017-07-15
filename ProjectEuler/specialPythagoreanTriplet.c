@@ -19,17 +19,17 @@ int main()
       c,
       flag;
 
-  for(a = 1, flag = 0; a <= N; a++)
+  for(a = b = c = 1, flag = 0; a < N/3 && !flag; a++)
   {
-    for(b = a; b <= N; b++)
+    for(b = a; b < N/2 && !flag; b++)
     {
       c = N - (a + b);
       if(pow(a, 2) + pow(b, 2) == pow(c, 2))
         flag = 1;
-      if(flag) break;
     }
-    if(flag) break;
+    b--;
   }
+  a--;
 
   printf("%d\n", a * b * c);
 

@@ -87,13 +87,12 @@ int main()
       numSquares,
       board,
       horizontalPos,
-      success
-    );
+      success);
 
   t[1] = clock();
 
   printf("The number of arrangements of queens is %d\n", success);
-  printf("The time taken for the calculations is %lf seconds\n", timeElapsed = double(t[1] - t[0]) / CLOCKS_PER_SEC);
+  printf("The time taken for the calculations is %lf seconds\n", timeElapsed = (double)(t[1] - t[0]) / CLOCKS_PER_SEC);
 
   return 0;
 }
